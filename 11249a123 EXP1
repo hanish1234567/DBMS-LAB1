@@ -1,0 +1,203 @@
+SQL*Plus: Release 11.2.0.1.0 Production on Mon Jul 27 12:00:10 2026
+
+Copyright (c) 1982, 2010, Oracle.  All rights reserved.
+
+Enter user-name: A123@db2021
+Enter password:
+
+Connected to:
+Oracle Database 11g Release 11.2.0.1.0 - Production
+
+SQL> create table newdetails
+  2  (
+  3  regno varchar2(10),
+  4  name varchar,
+  5  dob date,
+  6  gender char,
+  7  coursename varchar2(20),
+  8  year number(5),
+  9  department varchar2(20)
+ 10  );
+name varchar,
+            *
+ERROR at line 4:
+ORA-00906: missing left parenthesis
+
+
+SQL> create table newdetail
+  2  (
+  3  regno varchar2(10),
+  4  name varchar(30),
+  5  dob date,
+  6  gender char,
+  7  coursename varchar2(20),
+  8  year number(5),
+  9  department varchar2(20)
+ 10  );
+
+Table created.
+
+SQL> desc newdetail
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ REGNO                                              VARCHAR2(10)
+ NAME                                               VARCHAR2(30)
+ DOB                                                DATE
+ GENDER                                             CHAR(1)
+ COURSENAME                                         VARCHAR2(20)
+ YEAR                                               NUMBER(5)
+ DEPARTMENT                                         VARCHAR2(20)
+
+SQL> create table newdetail1 as select * from newdetail;
+
+Table created.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STUDENT1                       TABLE
+STUDENT                        TABLE
+NEWDETAIL1                     TABLE
+NEWDETAIL                      TABLE
+DETAILS                        TABLE
+BIN$EVjv812ESFSAxJtco68zwQ==$0 TABLE
+
+6 rows selected.
+
+SQL> drop table newdetail1;
+
+Table dropped.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STUDENT1                       TABLE
+STUDENT                        TABLE
+NEWDETAIL                      TABLE
+DETAILS                        TABLE
+BIN$fY9NELYhR0y+3NFkRsokbw==$0 TABLE
+BIN$EVjv812ESFSAxJtco68zwQ==$0 TABLE
+
+6 rows selected.
+
+SQL> insert into newdetail values ('11249A123','hanish','24-apr-2007','f','B.E',3,'CSE(AIML)');
+
+1 row created.
+
+SQL> select * from student;
+
+no rows selected
+
+SQL> select * from new detail:
+  2
+SQL>
+SQL> select * from newdetail;
+
+REGNO      NAME                           DOB       G COURSENAME
+---------- ------------------------------ --------- - --------------------
+      YEAR DEPARTMENT
+---------- --------------------
+11249A123  hanish                         24-APR-07 f B.E
+         3 CSE(AIML)
+
+
+SQL> alter table newdetail modify name varchar2(15);
+
+Table altered.
+
+SQL> select *from student;
+
+no rows selected
+
+SQL> select * from newdetail;
+
+REGNO      NAME            DOB       G COURSENAME                 YEAR
+---------- --------------- --------- - -------------------- ----------
+DEPARTMENT
+--------------------
+11249A123  hanish          24-APR-07 f B.E                           3
+CSE(AIML)
+
+
+SQL> alter table newdetail modify department varchar2(10);
+
+Table altered.
+
+SQL> create table newdetail2 as select * from student where 5>6;
+
+Table created.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STUDENT1                       TABLE
+STUDENT                        TABLE
+NEWDETAIL2                     TABLE
+NEWDETAIL                      TABLE
+DETAILS                        TABLE
+BIN$fY9NELYhR0y+3NFkRsokbw==$0 TABLE
+BIN$EVjv812ESFSAxJtco68zwQ==$0 TABLE
+
+7 rows selected.
+
+SQL> select * from newdteail2;
+select * from newdteail2
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from newdetail2;
+
+no rows selected
+
+SQL> delete * from newdetail2;
+delete * from newdetail2
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> delete from newdetail2;
+
+0 rows deleted.
+
+SQL> select * from newdetail;;
+select * from newdetail;
+                       *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> select * from newdetail;
+
+REGNO      NAME            DOB       G COURSENAME                 YEAR
+---------- --------------- --------- - -------------------- ----------
+DEPARTMENT
+----------
+11249A123  hanish          24-APR-07 f B.E                           3
+CSE(AIML)
+
+
+SQL> select * from tab
+  2
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+STUDENT1                       TABLE
+STUDENT                        TABLE
+NEWDETAIL2                     TABLE
+NEWDETAIL                      TABLE
+DETAILS                        TABLE
+BIN$fY9NELYhR0y+3NFkRsokbw==$0 TABLE
+BIN$EVjv812ESFSAxJtco68zwQ==$0 TABLE
+
+7 rows selected.
+
+SQL>
+
+
