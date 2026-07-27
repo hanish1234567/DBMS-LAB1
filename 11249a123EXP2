@@ -1,0 +1,78 @@
+SQL> insert into student values ('&regno','&name','&dob','&gender','&coursename','&year','&department');
+Enter value for regno: A162
+Enter value for name: keerthi
+Enter value for dob: 16-jun-2006
+Enter value for gender: f
+Enter value for coursename: b.e
+Enter value for year: 3
+Enter value for department: cse
+old   1: insert into student values ('&regno','&name','&dob','&gender','&coursename','&year','&department')
+new   1: insert into student values ('A162','keerthi','16-jun-2006','f','b.e','3','cse')
+insert into student values ('A162','keerthi','16-jun-2006','f','b.e','3','cse')
+            *
+ERROR at line 1:
+ORA-00947: not enough values
+
+
+SQL> insert into newdetail values ('&regno','&name','&dob','&gender','&coursename','&year','&department');
+Enter value for regno: A162
+Enter value for name: KEERTHI
+Enter value for dob: 16-jun-2006
+Enter value for gender: f
+Enter value for coursename: B.E
+Enter value for year: 3
+Enter value for department: CSE
+old   1: insert into newdetail values ('&regno','&name','&dob','&gender','&coursename','&year','&department')
+new   1: insert into newdetail values ('A162','KEERTHI','16-jun-2006','f','B.E','3','CSE')
+
+1 row created.
+
+SQL> select * from newdetail
+  2
+SQL> select * from newdetail;
+
+REGNO      NAME            DOB       G COURSENAME                 YEAR
+---------- --------------- --------- - -------------------- ----------
+DEPARTMENT
+----------
+11249A123  hanish          24-APR-07 f B.E                           3
+CSE(AIML)
+
+A162       KEERTHI         16-JUN-06 f B.E                           3
+CSE
+
+
+SQL> insert into newdetail values ('&regno','&name','&dob','&gender','&coursename','&year','&department')
+  2  ;
+Enter value for regno: A126
+Enter value for name: hema
+Enter value for dob: 10-sep-2004
+Enter value for gender: f
+Enter value for coursename: B.E
+Enter value for year: 3
+Enter value for department: CSE
+old   1: insert into newdetail values ('&regno','&name','&dob','&gender','&coursename','&year','&department')
+new   1: insert into newdetail values ('A126','hema','10-sep-2004','f','B.E','3','CSE')
+
+1 row created.
+
+SQL> select * from student;
+
+no rows selected
+
+SQL> select * from newdetail
+  2
+SQL> select * from newdetail;
+
+REGNO      NAME            DOB       G COURSENAME                 YEAR
+---------- --------------- --------- - -------------------- ----------
+DEPARTMENT
+----------
+11249A123  hanish          24-APR-07 f B.E                           3
+CSE(AIML)
+
+A162       KEERTHI         16-JUN-06 f B.E                           3
+CSE
+
+A126       hema            10-SEP-04 f B.E                           3
+CSE
